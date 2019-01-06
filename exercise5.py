@@ -10,6 +10,8 @@ def list_overlap(list1, list2):
 	List1: {list1} 
 	List2: {list2}
 		""")
+
+	holder.sort()
 	print(holder)
 
 a = []
