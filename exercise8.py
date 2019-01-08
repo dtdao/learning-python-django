@@ -3,7 +3,6 @@ player_two = input("What is your name player two? >>> ")
 
 play_game = input("Do you want to play? (yes/no)").lower()
 
-
 def winner_check(action, action2):
 	if(action == 'rock' and action2 == 'scissors' and action2 != 'paper'):
 		print(player_one, " is the winner!")
@@ -12,8 +11,6 @@ def winner_check(action, action2):
 	elif(action == 'paper' and action2 == 'rock' and action2 != 'scissors'):
 		print(player_one," is the winner!")
 	elif(action == action2):
-		print(action)
-		print(action2)
 		print("its a draw")
 	else:
 		print(player_two, " is the winner")
