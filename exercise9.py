@@ -1,5 +1,6 @@
 import random
 
+<<<<<<< HEAD
 totalGuess = 0
 game_on = ""
 
@@ -36,3 +37,15 @@ else:
 	print("Game over")
 
 
+=======
+print("Let's play a guessing game!!")
+
+def guess():
+    randomGenerate()
+
+def randomGenerate():
+    return random.randint(1,9)
+
+
+if not isinstance(x, int)
+>>>>>>> 4fb26198de918fcee0e9a987e79c834974f70d8d
