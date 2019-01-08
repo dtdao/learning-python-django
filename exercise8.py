@@ -1,7 +1,7 @@
-player_one = input("What is your name player one? >>> ")
-player_two = input("What is your name player two? >>> ")
+player_one = input("What is your name player one? >>> ").replace(" ", "")
+player_two = input("What is your name player two? >>> ").replace(" ", "")
 
-play_game = input("Do you want to play? (yes/no)").lower()
+play_game = input("Do you want to play? (yes/no)").lower().replace(" ", "")
 
 
 def winner_check(action, action2):
@@ -21,8 +21,8 @@ def winner_check(action, action2):
 while play_game != "no" and (play_game in ['yes', 'no']):
 	while True:
 		try:
-			player_one_move = input("What is your move player 1? rock, paper, or scissors? >>> ").lower()
-			player_two_move = input("What is your move player 2? rock, paper, or scissors? >>> ").lower() 
+			player_one_move = input("What is your move player 1? rock, paper, or scissors? >>> ").lower().replace(" ", "")
+			player_two_move = input("What is your move player 2? rock, paper, or scissors? >>> ").lower().replace(" ", "")
 			if(player_one_move not in ['rock', 'paper', 'scissors'] or player_two_move not in ['rock', 'paper', 'scissors']):
 				raise ValueError("Invalid Choice for Move")
 		except ValueError:
@@ -33,10 +33,7 @@ while play_game != "no" and (play_game in ['yes', 'no']):
 
 	winner_check(player_one_move, player_two_move)
 
-	play_game = input("Do you want to player again? (yes/no)").lower()
+	play_game = input("Do you want to player again? (yes/no)").lower().replace(" ", "")
 
-else: 
+else:
 	print("GoodBye!!")
-
-
-
