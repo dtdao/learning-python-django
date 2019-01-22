@@ -7,10 +7,10 @@ def make_txt_from_url(url_source):
 	name_of_file = input("Please give your new text file a name >> ")
 
 	soup = BeautifulSoup(r_html, "html.parser")
-	f = open(f"{name_of_file}.txt", "w+", encoding="utf-8")
 
-	for content in soup.find_all("p"):
-		f.write(str(content.text))
+	with open(f"{name_of_file}.txt", "w+", encoding="utf-8") as open_file:
+		for content in soup.find_all("p"):
+			open_file.write(str(content.text))
 
 if __name__ == "__main__":
 	url = "https://www.vanityfair.com/style/society/2014/06/monica-lewinsky-humiliation-culture"
