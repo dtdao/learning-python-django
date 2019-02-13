@@ -7,7 +7,7 @@ def add_new_birthday():
 		info = json.load(f)
 
 	name = input("What is the first and last name of the person you want to add? >>>>> ").strip()
-	birthday = input("What is the person birthday? (yyyy-mm-dd) >>>>> ").strip()
+	birthday = input(f"What is {name}'s birthday? (yyyy-mm-dd) >>>>> ").strip()
 
 	info["people"].append({"name": name, "birthday": birthday})
 
@@ -26,11 +26,11 @@ def birthday_lookup():
 		print(x["name"])
 
 	who_to_look_up = input("Whose birthday would you like to look up? >>>>> ")
-	for x in info["people"]:
-		if x["name"] == who_to_look_up:
-			birthday = x["birthday"]
-			print(f"{who_to_look_up}'s birthday is on {birthday}")
-			break
+
+	birthday = [x["birthday"] for x in info["people"] if x["name"] == who_to_look_up]
+
+	if birthday:
+		print(f"{who_to_look_up}'s birthday is on {birthday}")
 	else:
 		print("Sorry please check your name, or we might not have that in the system.")
 		option = input("Would you like to add a new name or search for a different person? (new/search) >> ").lower()
